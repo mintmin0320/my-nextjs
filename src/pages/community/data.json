@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "nickname": "민트민",
+      "profileImg": "",
+      "content": "오늘의 맛집",
+      "postImg": ""
+    },
+    {
+      "nickname": "컴공 조교",
+      "profileImg": "",
+      "content": "오늘의 학식",
+      "postImg": ""
+    },
+    {
+      "nickname": "신도림 라이더",
+      "profileImg": "",
+      "content": "동네 식당",
+      "postImg": ""
+    }
+  ]
+}
