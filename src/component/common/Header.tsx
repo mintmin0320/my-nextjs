@@ -75,6 +75,8 @@ const Container = styled.div<StyeldPropsType>`
   border-bottom: ${(props => props.bgColor === "index" ? "none" : "solid 2px #E6E6E6")};
   background-color: ${(props => props.bgColor === "index" ? "" : "#fff")};
   position: absolute;
+  /* background-color: #000; */
+  /* color: #fff; */
 `
 
 const Wrap = styled.div`

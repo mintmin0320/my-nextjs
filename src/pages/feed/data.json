@@ -1,22 +1,28 @@
 {
   "data": [
     {
-      "nickname": "민트민",
-      "profileImg": "",
-      "content": "오늘의 맛집",
-      "postImg": ""
-    },
-    {
-      "nickname": "컴공 조교",
-      "profileImg": "",
+      "nickname": "코팡 잇츠",
+      "profileImg": "/images/profile1.jpeg",
       "content": "오늘의 학식",
-      "postImg": ""
+      "postImg": "/images/food1.jpg"
     },
     {
-      "nickname": "신도림 라이더",
-      "profileImg": "",
+      "nickname": "민트민",
+      "profileImg": "/images/profile2.JPG",
+      "content": "오늘의 맛집",
+      "postImg": "/images/food2.jpg"
+    },
+    {
+      "nickname": "포장의 민족",
+      "profileImg": "/images/profile3.jpg",
       "content": "동네 식당",
-      "postImg": ""
+      "postImg": "/images/food3.jpg"
+    },
+    {
+      "nickname": "여기요",
+      "profileImg": "/images/profile4.jpg",
+      "content": "동네 식당",
+      "postImg": "/images/food4.jpg"
     }
   ]
 }

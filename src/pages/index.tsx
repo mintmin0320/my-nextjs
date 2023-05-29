@@ -16,7 +16,7 @@ const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image : url('images/indexImg.svg');
+  background-image : url('images/indexImg2.svg');
   background-size : cover;
   background-repeat: no-repeat;
   background-position : center;
