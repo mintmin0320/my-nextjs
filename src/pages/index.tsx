@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import Header from '@/component/Header'
+import Header from '@/component/common/Header'
 
 export default function Home() {
   return (

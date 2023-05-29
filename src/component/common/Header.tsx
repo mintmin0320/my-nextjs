@@ -2,15 +2,15 @@ import styled from 'styled-components'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export interface ImdexPropsType {
+interface IndexPropsType {
   pageType: string;
 }
 
-export interface StyeldPropsType {
+interface StyeldPropsType {
   bgColor: string;
 }
 
-export default function Header(props: ImdexPropsType) {
+export default function Header(props: IndexPropsType) {
   const type = props.pageType;
 
   return (
@@ -30,14 +30,14 @@ export default function Header(props: ImdexPropsType) {
         </Link>
         <Header_menubar>
           <Link
-            href="/community" className='header_menubar_btn'
+            href="/feed" className='header_menubar_btn'
           >
             피드
           </Link>
           <Link
-            href="/community" className='header_menubar_btn'
+            href="/map" className='header_menubar_btn'
           >
-            메뉴2
+            식신로드
           </Link>
           <Link
             href="/community" className='header_menubar_btn'
@@ -72,8 +72,9 @@ const Container = styled.div<StyeldPropsType>`
   height: 10%;
   display: flex;
   justify-content: center;
-  border-bottom: solid 2px #E6E6E6;
+  border-bottom: ${(props => props.bgColor === "index" ? "none" : "solid 2px #E6E6E6")};
   background-color: ${(props => props.bgColor === "index" ? "" : "#fff")};
+  position: absolute;
 `
 
 const Wrap = styled.div`
@@ -99,33 +100,17 @@ const Header_menubar = styled.div`
   justify-content: space-around;
 
   .header_menubar_btn{
-    width: 20%;
-    height: 100%;
+    width: 18%;
+    height: 55%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    /* color: white; */
 
     &:hover{  
-      background-color : skyblue;
-      color : #fff;
+      background-color : #F2F2F2;
+      border-radius: 10px;
     }
-  }
-`
-
-const Header_menubar_btn = styled.div`
-  width: 20%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  /* color: white; */
-
-  &:hover{  
-    background-color : skyblue;
-    color : #fff;
   }
 `
 
@@ -137,16 +122,16 @@ const Header_auth = styled.div`
   justify-content: space-between;
 
   .header_auth_btn {
-    width: 45%;
-    height: 100%;
+    width: 50%;
+    height: 55%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
 
     &:hover{  
-      background-color : skyblue;
-      color : #fff;
+      background-color : #F2F2F2;
+      border-radius: 10px;
     }
   }
 `

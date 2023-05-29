@@ -1,8 +1,10 @@
 import styled from 'styled-components';
+import Image from 'next/image';
 
-import Header from '@/component/Header';
+import Header from '@/component/common/Header';
 import postData from './data.json'
 import { useState } from 'react';
+import ScrollUpBtn from '@/component/common/ScrollUpBtn';
 
 export interface Data {
   data: Object;
@@ -15,7 +17,7 @@ export interface DataList {
   postImg: string
 }
 
-export default function Community() {
+export default function Feed() {
   const [data, setData] = useState(postData.data);
 
   const PostList = () => {
@@ -28,7 +30,7 @@ export default function Community() {
                 <Post_Title>
                   <Post_Title_Profile>
                     <Post_Title_Profile_Img>
-                      {item.profileImg}
+                      프로필 이미지
                     </Post_Title_Profile_Img>
                   </Post_Title_Profile>
                   <Post_Title_Info>
@@ -36,7 +38,7 @@ export default function Community() {
                   </Post_Title_Info>
                 </Post_Title>
                 <Post_Img>
-                  {item.postImg}
+
                 </Post_Img>
                 <Post_Content>
                   {item.content}
@@ -48,7 +50,6 @@ export default function Community() {
       </>
     )
   }
-  console.log(data)
 
   return (
     <Wrap>
@@ -56,9 +57,8 @@ export default function Community() {
       <BlankBox />
       <Content>
         <PostList />
-
-
       </Content>
+      <ScrollUpBtn />
     </Wrap>
   )
 };
@@ -70,20 +70,21 @@ const Wrap = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: #FAFAFA;
+
+  .Post_C{
+    border-radius: -50%;
+  }
 `
 
 const BlankBox = styled.div`
   width: 100%;
-  height: 5%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 7%;
   background-color: #FAFAFA;
 `
 
 const Content = styled.div`
   width: 60%;
-  height: 95%;
+  height: 88%;
   /* border-left: solid 1px;
   border-right: solid 1px; */
   display: flex;
@@ -121,10 +122,11 @@ const Post_Title_Profile = styled.div`
 `
 
 const Post_Title_Profile_Img = styled.div`
-  width: 35%;
+  width: 100%;
   height: 80%;
-  border: solid 1px;
-  border-radius: 50%;
+  /* border: solid 1px; */
+  /* border-radius: 50%; */
+  position: relative;
 `
 
 const Post_Title_Info = styled.div`
@@ -139,7 +141,8 @@ const Post_Img = styled.div`
   width: 100%;
   height: 60%;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
+  /* justify-content: center; */
 `
 
 const Post_Content = styled.div`
