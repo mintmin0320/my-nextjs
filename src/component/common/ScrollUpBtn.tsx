@@ -49,7 +49,7 @@ const Container = styled.div`
     height: 50px;
     border-radius: 100%;
     border: 0 none;
-    background: #0064ff;
+    background: #5882FA;
     color: white;
     font-size: 18px;
     font-weight: bold;

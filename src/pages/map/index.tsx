@@ -1,19 +1,19 @@
-import Link from 'next/link';
-import Header from '@/component/common/Header';
+import { NextSeo } from 'next-seo';
 import styled from 'styled-components';
-import Map from '@/component/map/Map';
 import { NextPage } from 'next';
-import { Coordinates, Store } from '@/types/store';
 import { useEffect, useMemo } from 'react';
+import { useRouter } from 'next/router';
+
+import Header from '@/component/common/Header';
+import Map from '@/component/map/Map';
+import { Coordinates, Store } from '@/types/store';
 import useStores from '@/hooks/useStores';
 import useMap, { INITIAL_CENTER, INITIAL_ZOOM } from '@/hooks/useMap';
 import { NaverMap } from '@/types/map';
 import Markers from '@/component/map/Markers';
 import useCurrentStore from '@/hooks/useCurrentStore';
 import ShareBtn from '@/component/common/ShareBtn';
-import { useRouter } from 'next/router';
 import DetailSection from '@/component/map/DetailSection';
-import Title from '@/component/common/PageTab';
 
 interface Props {
   stores: Store[];
@@ -62,7 +62,10 @@ const Home: NextPage<Props> = ({ stores }) => {
 
   return (
     <Container>
-      <Title title="식신로드 | 세상의 모든음식" />
+      <NextSeo
+        title='식신로드'
+        description='네이버 추천 맛집을 소개하는 로드맵입니다.'
+      />
       <Header pageType='index' />
       <Content>
         <Blank_Box />
@@ -72,7 +75,7 @@ const Home: NextPage<Props> = ({ stores }) => {
           initialCenter={initialCenter}
         />
         <Markers />
-        {/* <DetailSection /> */}
+        <DetailSection />
       </Content>
       <ShareBtn />
     </Container>

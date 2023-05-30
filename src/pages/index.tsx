@@ -1,12 +1,15 @@
 import styled from 'styled-components'
+import { NextSeo } from 'next-seo';
 
 import Header from '@/component/common/Header'
-import Title from '@/component/common/PageTab'
 
 export default function Home() {
   return (
     <Wrap>
-      <Title title="세모 | 세상의 모든음식" />
+      <NextSeo
+        title='세모'
+        description='음식 사진을 공유하고 후기를 남기는 서비스입니다.'
+      />
       <Header pageType='index' />
     </Wrap>
   )

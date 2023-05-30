@@ -1,11 +1,11 @@
-import { useCallback, useEffect, useState } from 'react';
-import styled from 'styled-components';
+import { useCallback } from 'react';
 import { useRouter } from 'next/router';
+import copy from 'copy-to-clipboard';
+import styled from 'styled-components';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import useMap from '@/hooks/useMap';
-import copy from 'copy-to-clipboard';
 
 export default function ShareBtn() {
   const { getMapOptions } = useMap();
@@ -25,6 +25,7 @@ export default function ShareBtn() {
       <button
         className="topBtn"
         onClick={replaceAndCopyUrl}
+        aria-label="현재 위치 클립보드에 복사"
       >
         <FontAwesomeIcon icon={faUpRightFromSquare} />
       </button>
@@ -35,7 +36,7 @@ export default function ShareBtn() {
 const Container = styled.div`
   .topBtn {
     position: fixed; 
-    bottom: 40px; 
+    bottom: 80px; 
     right: 40px;
     width: 50px; 
     height: 50px;

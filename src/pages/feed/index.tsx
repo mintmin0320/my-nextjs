@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import styled from 'styled-components';
+import { NextSeo } from 'next-seo';
 import Image from 'next/image';
+import styled from 'styled-components';
 
 import Header from '@/component/common/Header';
 import ScrollUpBtn from '@/component/common/ScrollUpBtn';
 import postData from './data.json'
-import Title from '@/component/common/PageTab';
 
 interface DataList {
   nickname: string,
@@ -71,7 +71,10 @@ export default function Feed() {
 
   return (
     <Wrap>
-      <Title title="피드 | 세상의 모든음식" />
+      <NextSeo
+        title='피드'
+        description='음식 사진을 공유하고 소통하는 페이지입니다.'
+      />
       <Header pageType={""} />
       <BlankBox />
       <Content>
