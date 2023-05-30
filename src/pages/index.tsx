@@ -1,10 +1,12 @@
 import styled from 'styled-components'
 
 import Header from '@/component/common/Header'
+import Title from '@/component/common/PageTab'
 
 export default function Home() {
   return (
     <Wrap>
+      <Title title="세모 | 세상의 모든음식" />
       <Header pageType='index' />
     </Wrap>
   )

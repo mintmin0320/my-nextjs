@@ -1,16 +1,13 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 
 import Header from '@/component/common/Header';
-import postData from './data.json'
-import { useState } from 'react';
 import ScrollUpBtn from '@/component/common/ScrollUpBtn';
+import postData from './data.json'
+import Title from '@/component/common/PageTab';
 
-export interface Data {
-  data: Object;
-}
-
-export interface DataList {
+interface DataList {
   nickname: string,
   profileImg: string,
   content: string,
@@ -74,6 +71,7 @@ export default function Feed() {
 
   return (
     <Wrap>
+      <Title title="피드 | 세상의 모든음식" />
       <Header pageType={""} />
       <BlankBox />
       <Content>
@@ -118,6 +116,7 @@ const Post = styled.div`
   /* border-left: solid 1px #E6E6E6; */
   border-bottom: solid 1px #E6E6E6; 
   background-color: #fff;
+  /* margin-bottom: 40px; */
 `
 
 const Post_Title = styled.div`
@@ -167,7 +166,7 @@ const Post_Img = styled.div`
   /* align-items: center; */
   /* justify-content: center; */
   border-top: solid 1px #E6E6E6; 
-  background-color: #1C1C1C;
+  background-color: #000;
 
 `
 

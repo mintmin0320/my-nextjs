@@ -13,6 +13,7 @@ import useCurrentStore from '@/hooks/useCurrentStore';
 import ShareBtn from '@/component/common/ShareBtn';
 import { useRouter } from 'next/router';
 import DetailSection from '@/component/map/DetailSection';
+import Title from '@/component/common/PageTab';
 
 interface Props {
   stores: Store[];
@@ -61,6 +62,7 @@ const Home: NextPage<Props> = ({ stores }) => {
 
   return (
     <Container>
+      <Title title="식신로드 | 세상의 모든음식" />
       <Header pageType='index' />
       <Content>
         <Blank_Box />
