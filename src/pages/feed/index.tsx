@@ -31,6 +31,7 @@ export default function Feed() {
                         src={item.profileImg}
                         alt=''
                         fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         // width={300} height={0}
                         style={{ width: '100%', height: '100%', objectFit: "cover", borderRadius: "50%" }}
                         priority
@@ -47,6 +48,10 @@ export default function Feed() {
                         src={item.postImg}
                         alt=''
                         fill
+
+                        sizes="(max-width: 768px)"
+                        placeholder='blur'
+                        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO0WhFsDwADzwF2mLYSJgAAAABJRU5ErkJggg=="
                         // width={500} height={0}
                         style={{ width: '100%', height: '100%', objectFit: "contain", position: "absolute", top: "0", left: "0" }}
                         priority

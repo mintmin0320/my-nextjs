@@ -1,6 +1,3 @@
-
-
-import React from "react";
 import Lottie from "react-lottie-player";
 
 import errLottie from '../../../public/animation404.json'
