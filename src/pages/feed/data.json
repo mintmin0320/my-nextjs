@@ -23,6 +23,42 @@
       "profileImg": "/images/profile4.jpg",
       "content": "동네 식당",
       "postImg": "/images/food4.jpg"
+    },
+    {
+      "nickname": "여기요",
+      "profileImg": "/images/profile4.jpg",
+      "content": "동네 식당",
+      "postImg": "/images/food4.jpg"
+    },
+    {
+      "nickname": "포장의 민족",
+      "profileImg": "/images/profile3.jpg",
+      "content": "내가 먹어봤던 동네 식당 중에는 최고.. 동네 식당!",
+      "postImg": "/images/food3.jpg"
+    },
+    {
+      "nickname": "포장의 민족",
+      "profileImg": "/images/profile3.jpg",
+      "content": "동네 식당",
+      "postImg": "/images/food3.jpg"
+    },
+    {
+      "nickname": "포장의 민족",
+      "profileImg": "/images/profile3.jpg",
+      "content": "내가 먹어봤던 동네 식당 중에는 최고.. 동네 식당!",
+      "postImg": "/images/food3.jpg"
+    },
+    {
+      "nickname": "포장의 민족",
+      "profileImg": "/images/profile3.jpg",
+      "content": "내가 먹어봤던 동네 식당 중에는 최고.. 동네 식당!",
+      "postImg": "/images/food3.jpg"
+    },
+    {
+      "nickname": "포장의 민족",
+      "profileImg": "/images/profile3.jpg",
+      "content": "내가 먹어봤던 동네 식당 중에는 최고.. 동네 식당!",
+      "postImg": "/images/food3.jpg"
     }
   ]
 }

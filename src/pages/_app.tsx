@@ -1,7 +1,10 @@
 import type { AppProps } from 'next/app'
 import { DefaultSeo } from 'next-seo'
 
+import { ThemeProvider } from '@mui/material'
 import '@/styles/globals.scss'
+import { theme } from '../styles/theme'
+
 import SEO from '../../seo.config'
 
 
@@ -13,7 +16,9 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <DefaultSeo {...SEO} />
-      <Component {...pageProps} />
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   )
 }

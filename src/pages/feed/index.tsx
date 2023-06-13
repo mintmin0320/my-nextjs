@@ -5,7 +5,12 @@ import styled from 'styled-components';
 
 import Header from '@/component/common/Header';
 import ScrollUpBtn from '@/component/common/ScrollUpBtn';
+import ScrollIndiactor from '@/component/common/ScrollProgressbar';
 import postData from './data.json'
+
+import Rating from '@mui/material/Rating';
+import Box from '@mui/material/Box';
+
 
 interface DataList {
   nickname: string,
@@ -14,8 +19,28 @@ interface DataList {
   postImg: string
 }
 
+const labels: { [index: string]: string } = {
+  0.5: 'Useless',
+  1: 'Useless+',
+  1.5: 'Poor',
+  2: 'Poor+',
+  2.5: 'Ok',
+  3: 'Ok+',
+  3.5: 'Good',
+  4: 'Good+',
+  4.5: 'Excellent',
+  5: 'Excellent+',
+};
+
+function getLabelText(value: number) {
+  return `${value} Star${value !== 1 ? 's' : ''}, ${labels[value]}`;
+}
+
 export default function Feed() {
   const [data, setData] = useState(postData.data);
+  const [value, setValue] = useState<number | null>(2);
+  const [hover, setHover] = useState(-1);
+
 
   const PostList = () => {
     return (
@@ -48,12 +73,10 @@ export default function Feed() {
                         src={item.postImg}
                         alt=''
                         fill
-
                         sizes="(max-width: 768px)"
                         placeholder='blur'
                         blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO0WhFsDwADzwF2mLYSJgAAAABJRU5ErkJggg=="
-                        // width={500} height={0}
-                        style={{ width: '100%', height: '100%', objectFit: "contain", position: "absolute", top: "0", left: "0" }}
+                        style={{ width: '100%', height: '100%', objectFit: "cover", position: "absolute", top: "0", left: "0" }}
                         priority
                       />
                     </Post_Img>
@@ -61,9 +84,31 @@ export default function Feed() {
                   </Post_Wrap>
                 </Post_Title>
                 <Post_Content>
-                  {item.nickname}
+                  <Post_Review>
+                    {item.content}
+                  </Post_Review>
+                  <Box
+                    sx={{
+                      width: "100%",
+                      height: "30%",
+                      display: 'flex',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <Rating
+                      name="hover-feedback"
+                      value={value}
+                      precision={0.5}
+                      getLabelText={getLabelText}
+                      size='small'
+                      readOnly
+                    />
+                    {value !== null && (
+                      <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
+                    )}
+                  </Box>
 
-                  {item.content}
+
                 </Post_Content>
 
               </Post>
@@ -86,6 +131,7 @@ export default function Feed() {
         <PostList />
       </Content>
       <ScrollUpBtn />
+      <ScrollIndiactor />
     </Wrap>
   )
 };
@@ -110,31 +156,33 @@ const Content = styled.div`
   height: 88%;
   /* border-left: solid 1px;
   border-right: solid 1px; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-content: start;
+  /* flex-direction: column; */
+  /* align-items: center; */
   border: solid 1px #E6E6E6; 
 `
 
 const Post = styled.div`
   width: 100%;
-  height: 650px;
+  height: 350px;
   display: flex;
-  /* align-items: center; */
-  /* border-left: solid 1px #E6E6E6; */
+  flex-direction: column;
   border-bottom: solid 1px #E6E6E6; 
   background-color: #fff;
-  /* margin-bottom: 40px; */
+  cursor: pointer;
+
+  &:hover{  
+      background-color : #F2F2F2;
+    }
 `
 
 const Post_Title = styled.div`
-  width: 60%;
-  height: 100%;
-  /* border-top: solid 1px #E6E6E6; */
-  /* border-bottom: solid 1px #E6E6E6; */
+  width: 100%;
+  height: 70%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   align-items: center;
 `
 
@@ -150,7 +198,7 @@ const Post_Title_Profile = styled.div`
 
 const Post_Title_Profile_Img = styled.div`
   width: 10%;
-  height: 95%;
+  height: 80%;
   border-radius: 50%;
   position: relative;
   /* border: solid 1px #E6E6E6; */
@@ -163,7 +211,7 @@ const Post_Title_Info = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 18px;
+  font-size: 17px;
 `
 
 const Post_Img = styled.div`
@@ -175,13 +223,23 @@ const Post_Img = styled.div`
   /* justify-content: center; */
   border-top: solid 1px #E6E6E6; 
   background-color: #000;
-
+  /* max-width: 400px; */
 `
 
 const Post_Content = styled.div`
-  width: 40%;
-  height: 100%;
+  width: 100%;
+  height: 30%;
   display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  border-left: solid 1px #E6E6E6; 
+`
+
+const Post_Review = styled.div`
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
   /* align-items: center; */
   border-left: solid 1px #E6E6E6; 
 `
