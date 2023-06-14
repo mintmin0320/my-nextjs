@@ -1,6 +1,13 @@
+import { useState } from 'react';
 import styled from 'styled-components'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+import { TextField } from '@mui/material';
 
 interface IndexPropsType {
   pageType: string;
@@ -10,8 +17,65 @@ interface StyeldPropsType {
   bgColor: string;
 }
 
+
 export default function Header(props: IndexPropsType) {
   const type = props.pageType;
+  const [open, setOpen] = useState(false);
+  const handleClose = () => setOpen(false);
+
+  const style = {
+    position: 'absolute' as 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 500,
+    bgcolor: 'background.paper',
+    border: '1px solid #000',
+    boxShadow: 24,
+    p: 4,
+  };
+
+  const AuthModal = () => {
+    return (
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Modal_Wrap>
+            <Modal_Title>
+              세모 - 세상의 모든음식
+            </Modal_Title>
+            <Modal_Auth_box>
+              <TextField
+                id="filled-password-input"
+                label="Id"
+                type="text"
+                autoComplete="current-password"
+                variant="filled"
+                className='modal_input'
+              />
+              <TextField
+                id="filled-password-input"
+                label="Password"
+                type="password"
+                autoComplete="current-password"
+                variant="filled"
+                className='modal_input'
+              />
+              <Modal_Btn>로그인</Modal_Btn>
+              <Modal_Btn>회원가입</Modal_Btn>
+              <Modal_Hr />
+              <Modal_Hr />
+              <Modal_Btn>비회원 방문</Modal_Btn>
+            </Modal_Auth_box>
+          </Modal_Wrap>
+        </Box>
+      </Modal>
+    );
+  }
 
   return (
     <Container bgColor={type}>
@@ -51,11 +115,12 @@ export default function Header(props: IndexPropsType) {
           </Link>
         </Header_menubar>
         <Header_auth>
-          <Link
-            href="community" className='header_auth_btn'
+          <button
+            className='header_auth_btn'
+            onClick={() => setOpen(true)}
           >
             로그인
-          </Link>
+          </button>
           <Link
             href="community" className='header_auth_btn'
           >
@@ -63,6 +128,7 @@ export default function Header(props: IndexPropsType) {
           </Link>
         </Header_auth>
       </Wrap>
+      {open && (<AuthModal />)}
     </Container>
   )
 }
@@ -130,10 +196,66 @@ const Header_auth = styled.div`
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    border: 0;
+    background-color:transparent;
+    font-size: 16px;
 
     &:hover{  
       background-color : #F2F2F2;
       border-radius: 10px;
     }
   }
+`
+
+const Modal_Wrap = styled.div`
+  width: 100%;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+const Modal_Title = styled.div`
+  width: 50%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bolder;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+`
+
+const Modal_Auth_box = styled.div`
+  width: 60%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+
+  .modal_input {
+    width: 100%;
+    /* height: 10%; */
+    /* margin-bottom: 28px; */
+  }
+`
+
+const Modal_Btn = styled.div`
+  width: 100%;
+  height: 20%;
+  /* margin-bottom: 10px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px #D8D8D8;
+  cursor: pointer;
+  background-color: #5882FA;
+  color: #fff;
+`
+
+const Modal_Hr = styled.div`
+  width: 100%;
+  height: 5%;
+  border-top: solid 1px #D8D8D8;
 `

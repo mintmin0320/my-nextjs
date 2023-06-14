@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import Header from '@/component/common/Header';
 import ScrollUpBtn from '@/component/common/ScrollUpBtn';
 import ScrollIndiactor from '@/component/common/ScrollProgressbar';
-import postData from './data.json'
+import postData from './data.json';
 
 import Rating from '@mui/material/Rating';
 import Box from '@mui/material/Box';
@@ -107,10 +107,7 @@ export default function Feed() {
                       <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
                     )}
                   </Box>
-
-
                 </Post_Content>
-
               </Post>
             )
           })
