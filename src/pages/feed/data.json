@@ -1,64 +1,124 @@
 {
   "data": [
     {
+      "postId": "1",
       "nickname": "코팡 잇츠",
+      "storeName": "역전의 음료수",
       "profileImg": "/images/profile1.jpeg",
-      "content": "오늘의 학식",
-      "postImg": "/images/food2.jpg"
+      "content": "오늘의 학식은 역전의 음료수에서 산 음식입니다",
+      "postImg": [
+        "/images/food1.jpg",
+        "/images/food3.jpg"
+      ],
+      "star": 5
     },
     {
+      "postId": "2",
       "nickname": "민트민",
+      "storeName": "두솥 도시락",
       "profileImg": "/images/profile2.JPG",
-      "content": "오늘의 맛집",
-      "postImg": "/images/food1.jpg"
+      "content": "오늘의 맛집 산 음식입니다",
+      "postImg": [
+        "/images/food2.jpg",
+        "/images/food4.jpg"
+      ],
+      "star": 2
     },
     {
+      "postId": "3",
       "nickname": "포장의 민족",
+      "storeName": "지금 집에 가고싶다",
       "profileImg": "/images/profile3.jpg",
-      "content": "동네 식당",
-      "postImg": "/images/food3.jpg"
+      "content": "동네 식당 산 음식입니다",
+      "postImg": [
+        "/images/food1.jpg",
+        "/images/food4.jpg"
+      ],
+      "star": 4
     },
     {
+      "postId": "4",
       "nickname": "여기요",
+      "storeName": "수상한 국밥",
       "profileImg": "/images/profile4.jpg",
-      "content": "동네 식당",
-      "postImg": "/images/food4.jpg"
+      "content": "동네 식당 산 음식입니다",
+      "postImg": [
+        "/images/food2.jpg",
+        "/images/food3.jpg"
+      ],
+      "star": 1
     },
     {
+      "postId": "5",
       "nickname": "여기요",
+      "storeName": "와플 고등학교",
       "profileImg": "/images/profile4.jpg",
-      "content": "동네 식당",
-      "postImg": "/images/food4.jpg"
+      "content": "동네 식당 산 음식입니다",
+      "postImg": [
+        "/images/food4.jpg",
+        "/images/food1.jpg"
+      ],
+      "star": 2
     },
     {
-      "nickname": "포장의 민족",
+      "postId": "6",
+      "nickname": "포장의 민족2",
+      "storeName": "MainWay",
       "profileImg": "/images/profile3.jpg",
-      "content": "내가 먹어봤던 동네 식당 중에는 최고.. 동네 식당!",
-      "postImg": "/images/food3.jpg"
+      "content": "내가 먹어봤던.. 산 음식입니다",
+      "postImg": [
+        "/images/food3.jpg",
+        "/images/food2.jpg"
+      ],
+      "star": 3
     },
     {
-      "nickname": "포장의 민족",
+      "postId": "7",
+      "nickname": "포장족",
+      "storeName": "바이트 커피",
       "profileImg": "/images/profile3.jpg",
-      "content": "동네 식당",
-      "postImg": "/images/food3.jpg"
+      "content": "동네 식당 산 음식입니다",
+      "postImg": [
+        "/images/food2.jpg",
+        "/images/food1.jpg"
+      ],
+      "star": 4
     },
     {
-      "nickname": "포장의 민족",
+      "postId": "8",
+      "nickname": "의족",
+      "storeName": "분홍 통닭",
       "profileImg": "/images/profile3.jpg",
-      "content": "내가 먹어봤던 동네 식당 중에는 최고.. 동네 식당!",
-      "postImg": "/images/food3.jpg"
+      "content": "내가 동네 식당! 산 음식입니다",
+      "postImg": [
+        "/images/food1.jpg",
+        "/images/food4.jpg"
+      ],
+      "star": 5
     },
     {
-      "nickname": "포장의 민족",
+      "postId": "9",
+      "nickname": "포장",
+      "storeName": "마카오 반점",
       "profileImg": "/images/profile3.jpg",
-      "content": "내가 먹어봤던 동네 식당 중에는 최고.. 동네 식당!",
-      "postImg": "/images/food3.jpg"
+      "content": "동네 식당! 산 음식입니다",
+      "postImg": [
+        "/images/food2.jpg",
+        "/images/food4.jpg"
+      ],
+      "star": 1
     },
     {
-      "nickname": "포장의 민족",
+      "postId": "10",
+      "nickname": "포민족",
+      "storeName": "빡다방",
       "profileImg": "/images/profile3.jpg",
-      "content": "내가 먹어봤던 동네 식당 중에는 최고.. 동네 식당!",
-      "postImg": "/images/food3.jpg"
+      "content": "내가 먹어봤던 동네 식당 중에는 최고.. 동네 식당! 산 음식입니다",
+      "postImg": [
+        "/images/food4.jpg",
+        "/images/food3.jpg"
+      ],
+      "star": 3
     }
   ]
 }
