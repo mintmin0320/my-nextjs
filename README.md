@@ -14,21 +14,7 @@ https://github.com/mintmin0320/my-nextjs/assets/114549939/85a1532e-6ee5-4c04-92f
 <br/>
 <br/>
 
-git-flow
 
-|브랜치 종류|설명|
-|------|---|
-|main|테스트 서버에서 테스트가 끝나고 운영서버로 배포 할 수 있는 브랜치|
-|develop|개발을 위한 브랜치|
-|feature|하나의 기능을 개발하기 위한 브랜치|
-|hotfix|운영중인 버전에서 발생한 버그를 수정 하는 브랜치|
-
-- feature 브랜치는 하나의 기능을 개발하기 위한 브랜치입니다. 부모는 develop이며, 개발이 완료되면 develop에 merge합니다. 브랜치 이름은 보통 feature-1/*이 됩니다.
-develop 브랜치는 개발을 위한 브랜치입니다. 여러 feature들이 merge되는 장소이며, 아직 release되지 않은 기능들이 모여 있게 됩니다.
-- master 브랜치는 실제 운영 중인 서비스의 브랜치입니다.
-- hotfix 브랜치는 서비스에 문제가 발생했을 때 핫픽스에 해당하는 브랜치입니다. 기능 개발(feature) 등과 달리 빠르게 대처해야 할 필요가 있기 때문에, master 브랜치에 직접 merge하는 전략을 취합니다. develop과의 차이가 발생하기 때문에, 나중에 차이를 merge할 필요가 있습니다.
-<br/>
-<br/>
 
 커밋 메시지
 
